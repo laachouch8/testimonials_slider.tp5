@@ -133,6 +133,7 @@ body {
 }
 @media (max-width: 992px) {
   .curve {
+    width: 100%;
     bottom: -91px;
     left: -183px;
   }
