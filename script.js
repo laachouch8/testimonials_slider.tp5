@@ -8,21 +8,19 @@ let texTanya = document.querySelector(".slider .text.tanya");
 let textJhon = document.querySelector(".slider .text.jhon");
 
 next.onclick = function () {
-    profileTanya.classList.add("close");
-    texTanya.classList.add("close");
-
-    profileJhon.classList.remove("close");
+    profileTanya.classList.toggle("close");
+    texTanya.classList.toggle("close");
+    profileJhon.classList.toggle("close");
     profileJhon.classList.add("animate");
-    textJhon.classList.remove("close");
+    textJhon.classList.toggle("close");
     textJhon.classList.add("animate");
 }
 
 perv.onclick = function () {
-    profileJhon.classList.add("close");
-    textJhon.classList.add("close");
-
-    profileTanya.classList.remove("close");
+    profileTanya.classList.toggle("close");
+    profileJhon.classList.toggle("close");
+    textJhon.classList.toggle("close");
     profileTanya.classList.add("animate");
     texTanya.classList.add("animate");
-    texTanya.classList.remove("close");
+    texTanya.classList.toggle("close");
 }
