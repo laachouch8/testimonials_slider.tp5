@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --Dark--Blue: hsl(240, 38%, 20%);
+  --Grayish--Blue: hsl(240, 18%, 77%);
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.testimonials {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 992px) {
+  .testimonials::after {
+    display: none;
+  }
+}
+.slider {
+  max-width: 80%;
+  margin: 100px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 992px) {
+  .slider {
+    margin-top: 50px;
+    max-width: 100%;
+    flex-direction: column;
+  }
+}
+.slider .images {
+  width: 40%;
+  position: relative;
+}
+@media (max-width: 992px) {
+  .slider .images {
+    width: 70%;
+    order: -1;
+    margin-bottom: 100px;
+  }
+}
+.slider .images .key {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 78px;
+  height: 40px;
+  background-color: white;
+  position: absolute;
+  bottom: -11px;
+  left: 38px;
+  border-radius: 50px;
+  box-shadow: 0px 7px 12px 0px hsl(240deg 38% 20% / 42%);
+}
+@media (max-width: 992px) {
+  .slider .images .key {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.slider .images .key img {
+  width: 10px;
+  cursor: pointer;
+}
+.slider .text {
+  width: 60%;
+  position: relative;
+  right: -76px;
+  z-index: 5;
+}
+.slider .text::before {
+  content: url("../images/pattern-quotes.svg");
+  position: absolute;
+  top: -55px;
+  left: 108px;
+}
+@media (max-width: 992px) {
+  .slider .text {
+    margin: 0 auto;
+    width: 90%;
+    right: 0;
+    text-align: center;
+    z-index: 5;
+  }
+  .slider .text::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.slider .text p:first-child {
+  color: var(--Dark--Blue);
+  font-size: 32px;
+  line-height: 1.3;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+.slider .text p:last-child {
+  color: var(--Grayish--Blue);
+}
+.slider .text p:last-child span {
+  color: var(--Dark--Blue);
+  font-weight: bold;
+}
+@media (max-width: 992px) {
+  .slider .text p:last-child span {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+.slider .images .profile {
+  max-width: 100%;
+  border-radius: 9px;
+  box-shadow: 0px 15px 20px 0px hsl(240deg 38% 20% / 37%);
+}
+.slider .images .bg {
+  position: absolute;
+  max-width: 100%;
+  top: 0;
+  left: 0;
+  transform: scale(1.3) translate(3px, 7px);
+  z-index: -1;
+}
+.curve {
+  position: absolute;
+  bottom: 0;
+}
+@media (max-width: 992px) {
+  .curve {
+    bottom: -91px;
+    left: -183px;
+  }
+}
+.slider .profile.close {
+  display: none;
+}
+.slider .text.close {
+  display: none;
+}
+.slider .text.animate,
+.slider .profile.animate {
+  animation: change 0.5s ease;
+}
+@keyframes change {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
